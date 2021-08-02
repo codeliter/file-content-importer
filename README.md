@@ -16,7 +16,7 @@ composer install
 php artisan import:file:content {FILE_TO_BE_IMPORTED}
 ```
 
-{FILE_TO_BE_IMPORTED} - Must be replaced with the absolute or relative part of the file to be imported
+`{FILE_TO_BE_IMPORTED}` - Must be replaced with the absolute or relative part of the file to be imported
 
 ## Support
 

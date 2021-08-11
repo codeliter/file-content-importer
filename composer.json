@@ -16,7 +16,8 @@
         "halaxa/json-machine": "^0.7.0",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "ext-json": "*"
+        "ext-json": "*",
+      "ext-pcntl": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

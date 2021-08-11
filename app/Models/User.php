@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
+    use HasFactory;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,11 +30,11 @@ class User extends Model
         'email',
         'account',
         'credit_card',
-        'record_key'
+        'record_key' // To mark record to be inserted as unique
     ];
 
     protected $casts = [
-        'credit_card' => 'json',
+        'credit_card' => 'array',
         'checked' => 'boolean'
     ];
 

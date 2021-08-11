@@ -5,7 +5,5 @@ namespace App\Helpers\File;
 
 interface StreamFileInterface
 {
-    public function __construct(string $file);
-
-    function load(): iterable;
+    static function load(string $file): iterable;
 }

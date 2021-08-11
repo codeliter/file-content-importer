@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
@@ -20,14 +20,19 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'name' => $this->faker->name,
+            'address' => $this->faker->address,
+            'checked' => $this->faker->boolean,
+            'description' => $this->faker->macProcessor,
+            'interest' => $this->faker->postcode,
+            'date_of_birth' => Carbon::now()->subYears(mt_rand(18, 65))->toDateTimeString(),
+            'email' => $this->faker->email,
+            'account' => $this->faker->randomFloat(),
+            'credit_card' => $this->faker->creditCardDetails,
+            'record_key' => $this->faker->uuid // To mark record to be inserted as unique
         ];
     }
 

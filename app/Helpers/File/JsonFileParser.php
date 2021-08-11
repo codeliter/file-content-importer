@@ -14,24 +14,12 @@ use JsonMachine\JsonMachine;
 class JsonFileParser implements StreamFileInterface
 {
     /**
-     * @var JsonMachine
-     */
-    private JsonMachine $file;
-
-    /**
      * @param string $file
-     */
-    public function __construct(string $file)
-    {
-        $this->file = JsonMachine::fromFile($file);
-    }
-
-    /**
      * @return iterable
      * @throws Exception
      */
-    function load(): iterable
+    static function load(string $file): iterable
     {
-        return $this->file->getIterator();
+        return JsonMachine::fromFile($file)->getIterator();
     }
 }
